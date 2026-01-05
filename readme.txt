@@ -3,8 +3,8 @@ Contributors: solutionfirst
 Donate link: https://www.paypal.com/donate/?hosted_button_id=CUPZTPGSAHNKY
 Tags: google maps, dsgvo, gdpr, iframe, map, privacy, datenschutz, datenschutzgrundverordnung, google
 Requires at least: 4.9
-Tested up to: 6.8
-Stable tag: 1.0.3
+Tested up to: 6.9
+Stable tag: 1.0.4
 Requires PHP: 7.4
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,8 @@ Visit our live demonstration at [Live Plugin Demo - Solution First](https://plug
 * Size Control: Specify map width and height in % or px (e.g. 100% or 600px).
 * Privacy Notice: Toggle a GDPR-DSGVO notice, enter custom info text and link text, and point it to your privacy-policy URL.
 * Unlimited Maps: Free tier by default lets you add unlimited embeds. Have fun!
+* Full Translation: Decide whether you want to use this plugin with English translation or German translation.
+* No Advertising: Enjoy an advertising-free environment hence this Plugin does not display any advertising.
 
 **Manual Installation**
 1. Upload the entire `gdpr-dsgvo-compliant-google-maps-embeds` folder to the `/wp-content/plugins/` directory.
@@ -30,6 +32,7 @@ Visit our live demonstration at [Live Plugin Demo - Solution First](https://plug
 
 **Support and Feedback**
 If you need assistance or have any suggestions, please don’t hesitate to get in touch <wordpress-support@m00dy.org>. We’re happy to help and value your feedback!
+Please also check out our corresponding GDPR-DSVGO YouTube Plugin for safe video embedding. 
 
 **Disclaimer and Imprint**
 This plugin only blocks unwanted requests to Google’s servers made through the configured Google Maps iframe until the user explicitly clicks the consent button in the frontend.
@@ -47,6 +50,9 @@ Please find our Imprint here [Solution First Imprint](https://solutionfirst.m00d
 7. **Add/Edit map** screen with no input.
 
 == Changelog ==
+= 1.0.4 =
+* Updated README: Added / Expanded Plugin information.
+
 = 1.0.3 =
 * Code Refactoring (Removed duplicate of plugin constant, removed unnecessary calls during uninstall).
 
