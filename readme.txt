@@ -50,6 +50,9 @@ Please find our Imprint here [Solution First Imprint](https://solutionfirst.m00d
 7. **Add/Edit map** screen with no input.
 
 == Changelog ==
+= 1.0.5 =
+* Updated assets: Updated banner information for 772x250 and 1544x500 banners.
+
 = 1.0.4 =
 * Updated README: Added / Expanded Plugin information.
 
