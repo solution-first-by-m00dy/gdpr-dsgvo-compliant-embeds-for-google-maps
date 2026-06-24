@@ -70,15 +70,25 @@ function dsgvo_gm_map_settings_callback($post)
     $overlay_bg = get_post_meta($post->ID, '_dsgvo_gm_overlay_bg',  true) ?: '#ffffff';
     $button_bg  = get_post_meta($post->ID, '_dsgvo_gm_button_bg',   true) ?: '#0073aa';
     $btn_color  = get_post_meta($post->ID, '_dsgvo_gm_button_color',   true) ?: '#ffffff';
+    $btn_font_size = dsgvo_gm_sanitize_font_size(get_post_meta($post->ID, '_dsgvo_gm_button_font_size', true), '16px');
     $privacy_color = get_post_meta($post->ID, '_dsgvo_gm_privacy_color', true) ?: '#666666';
     $privacy_enabled = get_post_meta($post->ID, '_dsgvo_gm_privacy_enabled', true) ?: 0;
     $privacy_link = get_post_meta($post->ID, '_dsgvo_gm_privacy_link', true) ?: '';
 
     $privacy_text = get_post_meta($post->ID, '_dsgvo_gm_privacy_text', true) ?: '';
     $privacy_link_text = get_post_meta($post->ID, '_dsgvo_gm_privacy_link_text', true) ?: '';
+    $privacy_font_size = dsgvo_gm_sanitize_font_size(get_post_meta($post->ID, '_dsgvo_gm_privacy_font_size', true), '0.8em');
+    $privacy_link_font_size = dsgvo_gm_sanitize_font_size(get_post_meta($post->ID, '_dsgvo_gm_privacy_link_font_size', true), '0.8em');
+    $message_text = get_post_meta($post->ID, '_dsgvo_gm_message_text', true) ?: '';
+    $message_font_size = dsgvo_gm_sanitize_font_size(get_post_meta($post->ID, '_dsgvo_gm_message_font_size', true), '0.9em');
 
     $width = get_post_meta($post->ID, '_dsgvo_gm_width', true) ?: '100%';
     $height = get_post_meta($post->ID, '_dsgvo_gm_height', true) ?: '100%';
+    $load_all_enabled = get_post_meta($post->ID, '_dsgvo_gm_load_all_enabled', true) ?: 0;
+    $remember_enabled = get_post_meta($post->ID, '_dsgvo_gm_remember_enabled', true) ?: 0;
+    $remember_text = get_post_meta($post->ID, '_dsgvo_gm_remember_text', true) ?: __('Remember selection', 'gdpr-dsgvo-compliant-embeds-for-google-maps');
+    $remember_font_size = dsgvo_gm_sanitize_font_size(get_post_meta($post->ID, '_dsgvo_gm_remember_font_size', true), '0.85em');
+    $remember_color = get_post_meta($post->ID, '_dsgvo_gm_remember_color', true) ?: '#666666';
 
 
     // Set default if empty
@@ -113,6 +123,17 @@ function dsgvo_gm_map_settings_callback($post)
             name="dsgvo_gm_button_text"
             value="<?php printf('%s', esc_attr($btn_text)); ?>"
             style="width:100%;" />
+    </p>
+
+    <p>
+        <label for="dsgvo_gm_button_font_size"><?php esc_html_e('Button Font Size:', 'gdpr-dsgvo-compliant-embeds-for-google-maps'); ?></label><br>
+        <input
+            id="dsgvo_gm_button_font_size"
+            name="dsgvo_gm_button_font_size"
+            type="text"
+            value="<?php printf('%s', esc_attr($btn_font_size)); ?>"
+            style="width:100px;"
+            placeholder="16px">
     </p>
 
     <p>
@@ -235,6 +256,17 @@ function dsgvo_gm_map_settings_callback($post)
     </p>
 
     <p>
+        <label for="dsgvo_gm_privacy_font_size"><?php esc_html_e('Privacy Text Font Size:', 'gdpr-dsgvo-compliant-embeds-for-google-maps'); ?></label><br>
+        <input
+            id="dsgvo_gm_privacy_font_size"
+            name="dsgvo_gm_privacy_font_size"
+            type="text"
+            value="<?php printf('%s', esc_attr($privacy_font_size)); ?>"
+            style="width:100px;"
+            placeholder="0.8em">
+    </p>
+
+    <p>
         <label for="dsgvo_gm_privacy_link_text"><?php esc_html_e('Privacy Policy URL Text:', 'gdpr-dsgvo-compliant-embeds-for-google-maps'); ?></label><br>
         <input
             id="dsgvo_gm_privacy_link_text"
@@ -245,6 +277,17 @@ function dsgvo_gm_map_settings_callback($post)
     </p>
 
     <p>
+        <label for="dsgvo_gm_privacy_link_font_size"><?php esc_html_e('Privacy Link Font Size:', 'gdpr-dsgvo-compliant-embeds-for-google-maps'); ?></label><br>
+        <input
+            id="dsgvo_gm_privacy_link_font_size"
+            name="dsgvo_gm_privacy_link_font_size"
+            type="text"
+            value="<?php printf('%s', esc_attr($privacy_link_font_size)); ?>"
+            style="width:100px;"
+            placeholder="0.8em">
+    </p>
+
+    <p>
         <label for="dsgvo_gm_privacy_link"><?php esc_html_e('Privacy Policy URL:', 'gdpr-dsgvo-compliant-embeds-for-google-maps'); ?></label><br>
         <input
             id="dsgvo_gm_privacy_link"
@@ -252,6 +295,83 @@ function dsgvo_gm_map_settings_callback($post)
             type="url"
             value="<?php printf('%s', esc_attr($privacy_link)); ?>"
             style="width:100%;">
+    </p>
+
+    <p>
+        <label for="dsgvo_gm_message_text"><?php esc_html_e('Overlay Message:', 'gdpr-dsgvo-compliant-embeds-for-google-maps'); ?></label><br>
+        <textarea
+            id="dsgvo_gm_message_text"
+            name="dsgvo_gm_message_text"
+            style="width:100%;height:70px;"><?php printf('%s', esc_textarea($message_text)); ?></textarea><br>
+        <span class="description"><?php esc_html_e('Optional text shown between the button and the privacy notice.', 'gdpr-dsgvo-compliant-embeds-for-google-maps'); ?></span>
+    </p>
+
+    <p>
+        <label for="dsgvo_gm_message_font_size"><?php esc_html_e('Message Font Size:', 'gdpr-dsgvo-compliant-embeds-for-google-maps'); ?></label><br>
+        <input
+            id="dsgvo_gm_message_font_size"
+            name="dsgvo_gm_message_font_size"
+            type="text"
+            value="<?php printf('%s', esc_attr($message_font_size)); ?>"
+            style="width:100px;"
+            placeholder="0.9em">
+    </p>
+
+    <h4><?php esc_html_e('Load Behavior', 'gdpr-dsgvo-compliant-embeds-for-google-maps'); ?></h4>
+
+    <p>
+        <label>
+            <input
+                type="checkbox"
+                name="dsgvo_gm_load_all_enabled"
+                value="1"
+                <?php checked($load_all_enabled, 1); ?>>
+            <?php esc_html_e('Load all maps on one page', 'gdpr-dsgvo-compliant-embeds-for-google-maps'); ?>
+        </label><br>
+        <span class="description"><?php esc_html_e('If this option is enabled for multiple maps on the same page, one click loads all enabled maps together.', 'gdpr-dsgvo-compliant-embeds-for-google-maps'); ?></span>
+    </p>
+
+    <p>
+        <label>
+            <input
+                type="checkbox"
+                name="dsgvo_gm_remember_enabled"
+                value="1"
+                <?php checked($remember_enabled, 1); ?>>
+            <?php esc_html_e('Show remember selection', 'gdpr-dsgvo-compliant-embeds-for-google-maps'); ?>
+        </label><br>
+        <span class="description"><?php esc_html_e('Shows a checkbox in the overlay. If it is checked when loading, a cookie stores consent for future page views.', 'gdpr-dsgvo-compliant-embeds-for-google-maps'); ?></span>
+    </p>
+
+    <p>
+        <label for="dsgvo_gm_remember_text"><?php esc_html_e('Remember Selection Text:', 'gdpr-dsgvo-compliant-embeds-for-google-maps'); ?></label><br>
+        <input
+            id="dsgvo_gm_remember_text"
+            name="dsgvo_gm_remember_text"
+            type="text"
+            value="<?php printf('%s', esc_attr($remember_text)); ?>"
+            style="width:100%;">
+    </p>
+
+    <p>
+        <label for="dsgvo_gm_remember_font_size"><?php esc_html_e('Remember Selection Font Size:', 'gdpr-dsgvo-compliant-embeds-for-google-maps'); ?></label><br>
+        <input
+            id="dsgvo_gm_remember_font_size"
+            name="dsgvo_gm_remember_font_size"
+            type="text"
+            value="<?php printf('%s', esc_attr($remember_font_size)); ?>"
+            style="width:100px;"
+            placeholder="0.85em">
+    </p>
+
+    <p>
+        <label><?php esc_html_e('Remember Selection Text Color:', 'gdpr-dsgvo-compliant-embeds-for-google-maps'); ?></label><br>
+        <input
+            type="text"
+            name="dsgvo_gm_remember_color"
+            value="<?php printf('%s', esc_attr($remember_color)); ?>"
+            class="wp-color-picker-field"
+            data-default-color="#666666" />
     </p>
 
     <?php
@@ -292,6 +412,10 @@ function dsgvo_gm_save_meta($post_id)
         ? sanitize_text_field(wp_unslash($_POST['dsgvo_gm_button_text']))
         : '';
     update_post_meta($post_id, '_dsgvo_gm_button_text', $btn_text);
+
+    if (isset($_POST['dsgvo_gm_button_font_size'])) {
+        update_post_meta($post_id, '_dsgvo_gm_button_font_size', dsgvo_gm_sanitize_font_size(wp_unslash($_POST['dsgvo_gm_button_font_size']), '16px'));
+    }
 
     // Button Shape
     if (isset($_POST['dsgvo_gm_button_shape'])) {
@@ -354,7 +478,47 @@ function dsgvo_gm_save_meta($post_id)
         update_post_meta($post_id, '_dsgvo_gm_privacy_text', sanitize_text_field(wp_unslash($_POST['dsgvo_gm_privacy_text'])));
     }
 
+    if (isset($_POST['dsgvo_gm_privacy_font_size'])) {
+        update_post_meta($post_id, '_dsgvo_gm_privacy_font_size', dsgvo_gm_sanitize_font_size(wp_unslash($_POST['dsgvo_gm_privacy_font_size']), '0.8em'));
+    }
+
     if (isset($_POST['dsgvo_gm_privacy_link_text'])) {
         update_post_meta($post_id, '_dsgvo_gm_privacy_link_text', sanitize_text_field(wp_unslash($_POST['dsgvo_gm_privacy_link_text'])));
+    }
+
+    if (isset($_POST['dsgvo_gm_privacy_link_font_size'])) {
+        update_post_meta($post_id, '_dsgvo_gm_privacy_link_font_size', dsgvo_gm_sanitize_font_size(wp_unslash($_POST['dsgvo_gm_privacy_link_font_size']), '0.8em'));
+    }
+
+    if (isset($_POST['dsgvo_gm_message_text'])) {
+        update_post_meta($post_id, '_dsgvo_gm_message_text', sanitize_textarea_field(wp_unslash($_POST['dsgvo_gm_message_text'])));
+    }
+
+    if (isset($_POST['dsgvo_gm_message_font_size'])) {
+        update_post_meta($post_id, '_dsgvo_gm_message_font_size', dsgvo_gm_sanitize_font_size(wp_unslash($_POST['dsgvo_gm_message_font_size']), '0.9em'));
+    }
+
+    // Load behavior
+    $load_all_enabled = isset($_POST['dsgvo_gm_load_all_enabled']) ? 1 : 0;
+    update_post_meta($post_id, '_dsgvo_gm_load_all_enabled', $load_all_enabled);
+
+    $remember_enabled = isset($_POST['dsgvo_gm_remember_enabled']) ? 1 : 0;
+    update_post_meta($post_id, '_dsgvo_gm_remember_enabled', $remember_enabled);
+
+    if (isset($_POST['dsgvo_gm_remember_text'])) {
+        update_post_meta($post_id, '_dsgvo_gm_remember_text', sanitize_text_field(wp_unslash($_POST['dsgvo_gm_remember_text'])));
+    }
+
+    if (isset($_POST['dsgvo_gm_remember_font_size'])) {
+        update_post_meta($post_id, '_dsgvo_gm_remember_font_size', dsgvo_gm_sanitize_font_size(wp_unslash($_POST['dsgvo_gm_remember_font_size']), '0.85em'));
+    }
+
+    if (isset($_POST['dsgvo_gm_remember_color'])) {
+        $remember_color = sanitize_hex_color(wp_unslash($_POST['dsgvo_gm_remember_color']));
+        if ($remember_color) {
+            update_post_meta($post_id, '_dsgvo_gm_remember_color', $remember_color);
+        } else {
+            delete_post_meta($post_id, '_dsgvo_gm_remember_color');
+        }
     }
 }

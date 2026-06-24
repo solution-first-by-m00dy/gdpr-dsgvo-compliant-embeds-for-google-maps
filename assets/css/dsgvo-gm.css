@@ -28,12 +28,9 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
-}
-
-.dsgvo-gm-load-btn {
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
+  box-sizing: border-box;
+  padding: 1rem;
+  text-align: center;
 }
 
 .dsgvo-gm-load-btn {
@@ -43,9 +40,41 @@
 }
 
 .dsgvo-gm-privacy-info {
-  font-size: 0.8em;
-  margin-top: 8px;
-  margin-left: 10px;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 90%;
+  text-align: center;
+}
+
+.dsgvo-gm-message {
+  font-size: 0.9em;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 90%;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.dsgvo-gm-privacy-info a {
+  color: inherit;
+}
+
+.dsgvo-gm-remember-choice {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-size: 0.85em;
+  gap: 0.4rem;
+  justify-content: center;
+  line-height: 1.3;
+  margin: 0;
+  max-width: 90%;
+  text-align: center;
+}
+
+.dsgvo-gm-remember-choice input {
+  flex: 0 0 auto;
+  margin: 0;
 }
 
 .dsgvo-gm-overlay.dsgvo-gm-light {
@@ -79,11 +108,35 @@
   color: #191919;
 }
 
+.dsgvo-gm-message.dsgvo-gm-light {
+  color: #191919;
+}
+
+.dsgvo-gm-remember-choice.dsgvo-gm-light {
+  color: #191919;
+}
+
 .dsgvo-gm-privacy-info.dsgvo-gm-dark {
   color: #ffffff;
 }
 
+.dsgvo-gm-message.dsgvo-gm-dark {
+  color: #ffffff;
+}
+
+.dsgvo-gm-remember-choice.dsgvo-gm-dark {
+  color: #ffffff;
+}
+
 .dsgvo-gm-privacy-info.dsgvo-gm-custom {
+  color: #666666;
+}
+
+.dsgvo-gm-message.dsgvo-gm-custom {
+  color: #666666;
+}
+
+.dsgvo-gm-remember-choice.dsgvo-gm-custom {
   color: #666666;
 }
 

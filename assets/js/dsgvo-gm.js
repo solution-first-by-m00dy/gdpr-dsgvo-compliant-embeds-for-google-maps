@@ -1,10 +1,33 @@
 (function ($) {
-    $(document).on('click', '.dsgvo-gm-load-btn', function (e) {
-        e.preventDefault();
-        var container = $(this).closest('.dsgvo-gm-overlay');
+    var consentCookieName = 'dsgvo_gm_consent';
+    var consentCookieDays = 180;
+
+    function hasConsentCookie() {
+        return document.cookie.split(';').some(function (cookie) {
+            return cookie.trim().indexOf(consentCookieName + '=1') === 0;
+        });
+    }
+
+    function setConsentCookie() {
+        var expires = new Date();
+        expires.setTime(expires.getTime() + consentCookieDays * 24 * 60 * 60 * 1000);
+
+        var cookie = consentCookieName + '=1; expires=' + expires.toUTCString() + '; path=/; SameSite=Lax';
+        if (window.location.protocol === 'https:') {
+            cookie += '; Secure';
+        }
+
+        document.cookie = cookie;
+    }
+
+    function loadOverlay($container) {
+        if (!$container.length || $container.data('dsgvoGmLoaded')) {
+            return;
+        }
 
         // 1) Get Raw Base64 of data-iframe
-        var b64 = container.attr('data-iframe') || (container[0] && container[0].dataset.iframe);
+        var container = $container[0];
+        var b64 = $container.attr('data-iframe') || (container && container.dataset.iframe);
         if (!b64) {
             console.error('DSGVO GM: No data-iframe attribute found');
             return;
@@ -60,10 +83,41 @@
             });
 
             // 6) Empty container and fill it with new safe iframe
-            container.empty().append($safeIframe);
+            $container.data('dsgvoGmLoaded', true).empty().append($safeIframe);
 
         } catch (err) {
             console.error('DSGVO GM: Invalid Base64 in data-iframe:', err, b64);
         }
+    }
+
+    function getTargetOverlays($container) {
+        if ($container.attr('data-load-all') === '1') {
+            return $('.dsgvo-gm-overlay[data-load-all="1"]');
+        }
+
+        return $container;
+    }
+
+    $(document).on('click', '.dsgvo-gm-load-btn', function (e) {
+        e.preventDefault();
+
+        var $container = $(this).closest('.dsgvo-gm-overlay');
+        if ($container.find('.dsgvo-gm-remember-checkbox').is(':checked')) {
+            setConsentCookie();
+        }
+
+        getTargetOverlays($container).each(function () {
+            loadOverlay($(this));
+        });
+    });
+
+    $(function () {
+        if (!hasConsentCookie()) {
+            return;
+        }
+
+        $('.dsgvo-gm-overlay').each(function () {
+            loadOverlay($(this));
+        });
     });
 })(jQuery);

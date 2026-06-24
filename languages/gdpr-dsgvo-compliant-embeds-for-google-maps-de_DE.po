@@ -1,152 +1,235 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: DSGVO Google Maps Embeds 1.2.0\n"
-"POT-Creation-Date: 2025-04-21 12:00+02:00\n"
-"PO-Revision-Date: 2025-04-21 12:00+02:00\n"
-"Last-Translator: Solution First by M00dy <solutionfirst@m00dy.org>\n"
-"Language-Team: Solution First by M00dy <solutionfirst@m00dy.org>\n"
+"Project-Id-Version: GDPR-DSGVO compliant Embeds for Google Maps 1.1.0\\nPOT-Creation-Date: 2026-06-24 12:00+02:00\\nPO-Revision-Date: 2026-06-24 12:00+02:00\\nLast-Translator: Solution First by M00dy <solutionfirst@m00dy.org>\\nLanguage-Team: Solution First by M00dy <solutionfirst@m00dy.org>\\nLanguage: de_DE\\nMIME-Version: 1.0\\nContent-Type: text/plain; charset=UTF-8\\nContent-Transfer-Encoding: 8bit\\nPlural-Forms: nplurals=2; plural=(n != 1);\\nX-Generator: Codex\\n\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.6\n"
 
-#: gdpr-dsgvo-compliant-embeds-for-google-maps.php:4
-msgid "GDPR-DSGVO compliant Embeds for Google Maps"
-msgstr "GDPR-DSGVO-konforme Einbettungen von Google Maps"
+#: includes/admin.php:232
+msgid "100% or 450px"
+msgstr "100% oder 450px"
 
-#: gdpr-dsgvo-compliant-embeds-for-google-maps.php:6
-msgid "Enables GDPR-compliant embedding of multiple Google Maps iframes with user consent, selectable light/dark design, and optional privacy policy notice."
-msgstr "Ermöglicht das DSGVO-konforme Einbetten mehrerer Google Maps iframes mit Nutzereinwilligung, wählbarem Hell-/Dunkel-Design und optionalem Datenschutzhinweis."
-
-#: gdpr-dsgvo-compliant-embeds-for-google-maps.php:24
-msgid "Settings"
-msgstr "Einstellungen"
-
-#: gdpr-dsgvo-compliant-embeds-for-google-maps.php:25
-msgid "More information"
-msgstr "Mehr Informationen"
-
-#: gdpr-dsgvo-compliant-embeds-for-google-maps.php:82
-msgid "Load Google Maps"
-msgstr "Google Maps laden"
-
-#: includes/admin.php:30
-msgid "Maps"
-msgstr "Maps"
-
-#: includes/admin.php:31
-msgid "Map"
-msgstr "Map"
+#: includes/admin.php:222
+msgid "100% or 600px"
+msgstr "100% oder 600px"
 
 #: includes/admin.php:32
 msgid "Add New Map"
 msgstr "Neue Map hinzufügen"
 
-#: includes/admin.php:33
-msgid "Edit Map"
-msgstr "Map bearbeiten"
-
 #: includes/admin.php:34
 msgid "All Maps"
 msgstr "Alle Maps"
 
-#: includes/admin.php:48
-msgid "Map Settings"
-msgstr "Map Einstellungen"
+#: includes/admin.php:182
+msgid "Button Background Color:"
+msgstr "Hintergrundfarbe Button:"
 
+#: includes/admin.php:129
+msgid "Button Font Size:"
+msgstr "Button Schriftgröße:"
+
+#: includes/admin.php:117
+msgid "Button Settings"
+msgstr "Buttoneinstellungen"
+
+#: includes/admin.php:192
+msgid "Button Text Color:"
+msgstr "Textfarbe Button:"
+
+#: includes/admin.php:120
+msgid "Button Text:"
+msgstr "Buttontext:"
+
+#: includes/admin.php:140
+msgid "Button Type:"
+msgstr "Button-Typ:"
+
+#: includes/admin.php:166
+msgid "Custom"
+msgstr "Angepasst"
+
+#: includes/admin.php:165
+msgid "Dark"
+msgstr "Dunkel"
+
+#: includes/admin.php:162
+msgid "Design:"
+msgstr "Design:"
+
+#: includes/admin.php:33
+msgid "Edit Map"
+msgstr "Map bearbeiten"
+
+#: includes/admin.php:244
+msgid "Enable privacy notice"
+msgstr "Datenschutzhinweis aktivieren"
+
+#: gdpr-dsgvo-compliant-embeds-for-google-maps.php:6
+msgid "Enables GDPR-compliant embedding of multiple Google Maps iframes with user consent, selectable light/dark design, and optional privacy policy notice."
+msgstr "Ermöglicht das DSGVO-konforme Einbetten mehrerer Google Maps iframes mit Nutzereinwilligung, wählbarem Hell-/Dunkel-Design und optionalem Datenschutzhinweis."
+
+#: gdpr-dsgvo-compliant-embeds-for-google-maps.php:4
+msgid "GDPR-DSGVO compliant Embeds for Google Maps"
+msgstr "GDPR-DSGVO-konforme Einbettungen von Google Maps"
+
+#: includes/admin.php:225
+msgid "Height:"
+msgstr "Höhe:"
+
+#: includes/admin.php:331
+msgid "If this option is enabled for multiple maps on the same page, one click loads all enabled maps together."
+msgstr "Wenn diese Option bei mehreren Karten auf derselben Seite aktiviert ist, lädt ein Klick alle aktivierten Karten gemeinsam."
+
+#: includes/admin.php:164
+msgid "Light"
+msgstr "Hell"
+
+#: includes/admin.php:320
+msgid "Load Behavior"
+msgstr "Ladeverhalten"
+
+#: gdpr-dsgvo-compliant-embeds-for-google-maps.php:97
 #: includes/admin.php:64
 msgid "Load Google Maps"
 msgstr "Google Maps laden"
 
-#: includes/admin.php:93
-msgid "Shortcode:"
-msgstr "Shortcode:"
+#: includes/frontend.php:20
+msgid "Load Map"
+msgstr "Karte laden"
 
-#: includes/admin.php:107
-msgid "Button Settings"
-msgstr "Buttoneinstellungen"
+#: includes/admin.php:329
+msgid "Load all maps on one page"
+msgstr "Alle auf einer Seite laden"
 
-#: includes/admin.php:119
-msgid "Button Type:"
-msgstr "Button Typ:"
+#: includes/admin.php:31
+msgid "Map"
+msgstr "Map"
 
-#: includes/admin.php:126
-msgid "Rounded"
-msgstr "Abgerundet"
+#: includes/admin.php:48
+msgid "Map Settings"
+msgstr "Map-Einstellungen"
 
-#: includes/admin.php:134
-msgid "Squared"
-msgstr "Eckig"
+#: includes/admin.php:30
+msgid "Maps"
+msgstr "Maps"
 
-#: includes/admin.php:138
-msgid "Style Settings"
-msgstr "Stileinstellungen"
+#: includes/admin.php:310
+msgid "Message Font Size:"
+msgstr "Schriftgröße Nachricht:"
 
-#: includes/admin.php:143
-msgid "Light"
-msgstr "Hell"
+#: gdpr-dsgvo-compliant-embeds-for-google-maps.php:25
+msgid "More information"
+msgstr "Mehr Informationen"
 
-#: includes/admin.php:144
-msgid "Dark"
-msgstr "Dunkel"
+#: includes/admin.php:306
+msgid "Optional text shown between the button and the privacy notice."
+msgstr "Optionaler Text, der zwischen Button und Datenschutzhinweis angezeigt wird."
 
-#: includes/admin.php:145
-msgid "Custom"
-msgstr "Angepasst"
-
-#: includes/admin.php:151
+#: includes/admin.php:172
 msgid "Overlay Background Color:"
-msgstr "Hintergrundfarbe Überlagerung:"
+msgstr "Hintergrundfarbe der Überlagerung:"
 
-#: includes/admin.php:161
-msgid "Button Background Color:"
-msgstr "Hintergrundfarbe Button:"
+#: includes/admin.php:301
+msgid "Overlay Message:"
+msgstr "Nachricht im Overlay:"
 
-#: includes/admin.php:171
-msgid "Button Text Color:"
-msgstr "Textfarbe Button:"
-
-#: includes/admin.php:181
-msgid "Privacy Info Text Color:"
-msgstr "Textfarbe Datenschutzinformationen:"
-
-#: includes/admin.php:191
-msgid "Size Settings (% or px)"
-msgstr "Größeneinstellungen (% oder px)"
-
-#: includes/admin.php:194
-msgid "Width:"
-msgstr "Breite:"
-
-#: includes/admin.php:204
-msgid "Height:"
-msgstr "Höhe:"
-
-#: includes/admin.php:214
-msgid "Privacy Settings"
-msgstr "Datenschutzeinstellungen"
-
-#: includes/admin.php:223
-msgid "Enable privacy notice"
-msgstr "Datenschutzhinweis aktivieren"
-
-#: includes/admin.php:228
-msgid "Privacy Policy Text:"
-msgstr "Text für den Datenschutzhinweis:"
-
-#: includes/admin.php:238
-msgid "Privacy Policy URL Text:"
-msgstr "Text für die URL der Datenschutzerklärung:"
-
-#: includes/admin.php:248
-msgid "Privacy Policy URL:"
-msgstr "URL der Datenschutzerklärung:"
-
-#: includes/frontend.php:40
+#: includes/frontend.php:44
 msgid "Please see our"
 msgstr "Es gilt unsere"
 
-#: includes/frontend.php:41
+#: includes/admin.php:202
+msgid "Privacy Info Text Color:"
+msgstr "Textfarbe Datenschutzinformationen:"
+
+#: includes/admin.php:280
+msgid "Privacy Link Font Size:"
+msgstr "Schriftgröße Datenschutzlink:"
+
+#: includes/frontend.php:45
 msgid "Privacy Policy"
 msgstr "Datenschutzerklärung"
+
+#: includes/admin.php:249
+msgid "Privacy Policy Text:"
+msgstr "Text für den Datenschutzhinweis:"
+
+#: includes/admin.php:270
+msgid "Privacy Policy URL Text:"
+msgstr "Text für die URL der Datenschutzerkl?rung:"
+
+#: includes/admin.php:291
+msgid "Privacy Policy URL:"
+msgstr "URL der Datenschutzerkl?rung:"
+
+#: includes/admin.php:235
+msgid "Privacy Settings"
+msgstr "Datenschutzeinstellungen"
+
+#: includes/admin.php:259
+msgid "Privacy Text Font Size:"
+msgstr "Schriftgröße Datenschutztext:"
+
+#: includes/admin.php:357
+msgid "Remember Selection Font Size:"
+msgstr "Schriftgröße Auswahl merken:"
+
+#: includes/admin.php:368
+msgid "Remember Selection Text Color:"
+msgstr "Textfarbe Auswahl merken:"
+
+#: includes/admin.php:347
+msgid "Remember Selection Text:"
+msgstr "Text für Auswahl merken:"
+
+#: includes/admin.php:89
+#: includes/frontend.php:50
+msgid "Remember selection"
+msgstr "Auswahl merken"
+
+#: includes/admin.php:147
+msgid "Rounded"
+msgstr "Abgerundet"
+
+#: gdpr-dsgvo-compliant-embeds-for-google-maps.php:24
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: includes/admin.php:103
+msgid "Shortcode:"
+msgstr "Shortcode:"
+
+#: includes/admin.php:341
+msgid "Show remember selection"
+msgstr "Auswahl merken anzeigen"
+
+#: includes/admin.php:343
+msgid "Shows a checkbox in the overlay. If it is checked when loading, a cookie stores consent for future page views."
+msgstr "Zeigt im Overlay eine Checkbox an. Wird sie beim Laden aktiviert, speichert ein Cookie die Zustimmung für künftige Seitenaufrufe."
+
+#: includes/admin.php:212
+msgid "Size Settings (% or px)"
+msgstr "Größeneinstellungen (% oder px)"
+
+#: includes/admin.php:155
+msgid "Squared"
+msgstr "Eckig"
+
+#: includes/admin.php:159
+msgid "Style Settings"
+msgstr "Stileinstellungen"
+
+#: includes/admin.php:215
+msgid "Width:"
+msgstr "Breite:"
+
+#: includes/admin.php:112
+msgid "iframe Code:"
+msgstr "iframe-Code:"
+
