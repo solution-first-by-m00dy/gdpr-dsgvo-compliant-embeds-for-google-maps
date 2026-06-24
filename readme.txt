@@ -3,8 +3,8 @@ Contributors: solutionfirst
 Donate link: https://www.paypal.com/donate/?hosted_button_id=CUPZTPGSAHNKY
 Tags: google maps, dsgvo, gdpr, iframe, map, privacy, datenschutz, datenschutzgrundverordnung, google
 Requires at least: 4.9
-Tested up to: 6.9
-Stable tag: 1.0.5
+Tested up to: 7.0
+Stable tag: 1.1.0
 Requires PHP: 7.4
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -50,6 +50,14 @@ Please find our Imprint here [Solution First Imprint](https://solutionfirst.m00d
 7. **Add/Edit map** screen with no input.
 
 == Changelog ==
+= 1.1.0 =
+* Added per-map font size fields for button text, overlay message, privacy text, privacy link, and remember-selection text.
+* Moved the remember-selection checkbox below the privacy notice/link in the frontend overlay.
+* Added an optional per-map overlay message text field.
+* Added centered overlay text alignment for privacy notices and remember-selection text.
+* Added per-map option to load all opted-in maps on the same page.
+* Added per-map remember-selection checkbox with configurable label and text color. Remembered consent is stored in a simple cookie and auto-loads maps on future page views.
+
 = 1.0.5 =
 * Updated assets: Updated banner information for 772x250 and 1544x500 banners.
 
